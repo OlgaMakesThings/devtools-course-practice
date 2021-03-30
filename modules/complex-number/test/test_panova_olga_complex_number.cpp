@@ -1,7 +1,7 @@
 // Copyright 2021 Panova Olga
 
-#include <cmath>
 #include <gtest/gtest.h>
+#include <cmath>
 #include "include/complex_number.h"
 
 TEST(Panova_Olga_ComplexNumberTest, Comparing_And_Fitting) {
@@ -13,16 +13,14 @@ TEST(Panova_Olga_ComplexNumberTest, Comparing_And_Fitting) {
     if (a.getRe() != b.getRe()) {
         if (a.getRe() < b.getRe()) {
             a = a + re_tenth;
-        }
-        else {
+        } else {
             a = a - re_tenth;
         }
     }
     if (a.getIm() != b.getIm()) {
         if (a.getIm() < b.getIm()) {
             a = a + im_tenth;
-        }
-        else {
+        } else {
             a = a - im_tenth;
         }
     }
