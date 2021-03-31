@@ -59,7 +59,7 @@ TEST(Panova_Olga_ComplexNumberTest, Long_Arithmetic_Expression) {
     ComplexNumber expected_y(14.032, -48.1634);
     bool check = true;
 
-    //Act
+    // Act
     ComplexNumber x = a * a + (b + b - c) / (a + a + a) - b + b / a * (a + a);
     ComplexNumber y = c - b * (a * a - a * a + b / b) / a + a - a * (c / c / c);
 
