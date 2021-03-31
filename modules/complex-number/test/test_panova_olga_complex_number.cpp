@@ -25,7 +25,7 @@ TEST(Panova_Olga_ComplexNumberTest, Comparing_And_Fitting) {
         }
     }
 
-    ASSERT_DOUBLE_EQ(a.getRe(), a.getRe());
+    ASSERT_DOUBLE_EQ(a.getRe(), b.getRe());
     ASSERT_DOUBLE_EQ(a.getIm(), b.getIm());
 }
 
