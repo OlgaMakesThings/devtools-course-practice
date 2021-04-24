@@ -7,7 +7,7 @@
 
 class Shapes {
 protected:
-	int _x, _y, _z;
+    int _x, _y, _z;
     double pi = 3.1415926535;
 public:
     Shapes() :_x(0), _y(0), _z(0) {}
@@ -17,16 +17,13 @@ public:
     virtual ~Shapes() {}
 };
 
-class Ñube :public Shapes {
+class Cube :public Shapes {
 protected:
     double _side;
 public:
-    Ñube() : _side(1) {}
-    Ñube(int x, int y, int z, double h) :Shapes(x, y, z), _side(h) {}
-    double Volume() const override
-    {
-        return _side * _side * _side;
-    }
+    Cube() : _side(1) {}
+    Cube(int x, int y, int z, double h) :Shapes(x, y, z), _side(h) {}
+    double Volume() const override;
 };
 
 class Sphere :public Shapes {
@@ -35,10 +32,7 @@ protected:
 public:
     Sphere() : _radius(1) {}
     Sphere(int x, int y, int z, double r) :Shapes(x, y, z), _radius(r) {}
-    double Volume() const override
-    {
-        return pi * pow(_radius, 3) * 4 / 3;
-    }
+    double Volume() const override;
 };
 
 class Cone :public Shapes {
@@ -47,13 +41,8 @@ protected:
 public:
     Cone() : _radius(1), _h(1) {}
     Cone(int x, int y, int z, double r, double h) :Shapes(x, y, z), _radius(r), _h(h) {}
-    double BaseArea() const {
-        return pi * pow(_radius, 2);
-    }
-    double Volume() const override
-    {
-        return (this->BaseArea()) * _h * 1 / 3;
-    }
+    double BaseArea() const;
+    double Volume() const override;
 };
 
 class Parallelepiped :public Shapes {
@@ -62,9 +51,38 @@ protected:
 public:
     Parallelepiped() : _a(1), _b(1), _h(1) {}
     Parallelepiped(int x, int y, int z, double a, double b, double h) :Shapes(x, y, z), _a(a), _b(b), _h(h) {}
-    double Volume() const override
-    {
-        return _a * _b * _h;
-    }
+    double Volume() const override;
 };
+
+class Prism :public Shapes {
+protected:
+    double _side, _h;
+    int _corners_count;
+public:
+    Prism() : _side(1), _h(1), _corners_count(1) {}
+    Prism(int x, int y, int z, double side, double h, double n) :Shapes(x, y, z), _side(side), _h(h), _corners_count(n) {}
+    double BaseArea() const;
+    double Volume() const override;
+};
+
+class Pyramid :public Shapes {
+protected:
+    double _side, _h;
+    int _corners_count;
+public:
+    Pyramid() : _side(1), _h(1), _corners_count(1) {}
+    Pyramid(int x, int y, int z, double side, double h, double n) :Shapes(x, y, z), _side(side), _h(h), _corners_count(n) {}
+    double BaseArea() const;
+    double Volume() const override;
+};
+
+class Torus :public Shapes {
+protected:
+    double center_to_axis, _radius;
+public:
+    Torus() : _radius(1) {}
+    Torus(int x, int y, int z, double d, double r) :Shapes(x, y, z), center_to_axis(d), _radius(r) {}
+    double Volume() const override;
+};
+
 #endif  // MODULES_3D_SHAPES_VOLUME_INCLUDE_3D_SHAPES_VOLUME_H_
