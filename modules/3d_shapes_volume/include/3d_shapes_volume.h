@@ -6,7 +6,6 @@
 #include <cmath>
 
 class Shapes {
-
  protected:
     int _x, _y, _z;
     double pi = 3.1415926535;
@@ -18,7 +17,6 @@ class Shapes {
 };
 
 class Cube :public Shapes {
-
  protected:
     double _side;
  public:
@@ -28,7 +26,6 @@ class Cube :public Shapes {
 };
 
 class Sphere :public Shapes {
-
  protected:
     double _radius;
  public:
@@ -38,7 +35,6 @@ class Sphere :public Shapes {
 };
 
 class Cone :public Shapes {
-
  protected:
     double _radius, _h;
  public:
@@ -50,7 +46,6 @@ class Cone :public Shapes {
 };
 
 class Parallelepiped :public Shapes {
-
  protected:
     double _a, _b, _h;
  public:
@@ -61,7 +56,6 @@ class Parallelepiped :public Shapes {
 };
 
 class Prism :public Shapes {
-
  protected:
     double _side, _h;
     int _corners_count;
@@ -74,7 +68,6 @@ class Prism :public Shapes {
 };
 
 class Pyramid :public Shapes {
-
  protected:
     double _side, _h;
     int _corners_count;
@@ -87,7 +80,6 @@ class Pyramid :public Shapes {
 };
 
 class Torus :public Shapes {
-
  protected:
     double center_to_axis, _radius;
  public:
