@@ -13,7 +13,6 @@ class Shapes {
     Shapes() :_x(0), _y(0), _z(0) {}
     Shapes(int x, int y, int z) :_x(x), _y(y), _z(z) {}
     virtual double Volume()const = 0;
-    virtual ~Shapes() {}
 };
 
 class Cube :public Shapes {
