@@ -3,7 +3,7 @@
 #include "include/3d_shapes_volume.h"
 
 double Cube::Volume() const {
-        return pow(_side, 3);
+    return pow(_side, 3);
 }
 
 double Sphere::Volume() const {
@@ -40,4 +40,8 @@ double Pyramid::Volume() const {
 
 double Torus::Volume() const {
     return 2 * pow(pi, 2) * center_to_axis * pow(_radius, 2);
+}
+
+double Frustum::Volume() const {
+    return pi * _h * (pow(_top_r, 2) + _top_r * _r + pow(_r, 2)) / 3;
 }

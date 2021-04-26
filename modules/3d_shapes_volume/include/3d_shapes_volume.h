@@ -88,4 +88,14 @@ class Torus :public Shapes {
     double Volume() const override;
 };
 
+class Frustum :public Shapes {
+protected:
+    double _top_r, _r, _h;
+public:
+    Frustum() : _top_r(1), _r(1), _h(1) {}
+    Frustum(int x, int y, int z, double r, double R, double h) :
+        Shapes(x, y, z), _top_r(r), _r(R), _h(h) {}
+    double Volume() const override;
+};
+
 #endif  // MODULES_3D_SHAPES_VOLUME_INCLUDE_3D_SHAPES_VOLUME_H_

@@ -101,3 +101,18 @@ TEST(PANOVA_SHAPES_VOLUME, Calculate_Torus_Volume) {
     // Assert
     ASSERT_DOUBLE_EQ(true_volume, volume);
 }
+
+TEST(PANOVA_SHAPES_VOLUME, Calculate_Frustum_Volume) {
+    // Arrange
+    double R = 12.01, r = 6.824, h = 7.401;
+    double true_volume = 2114.00000;
+
+    // Act
+    Frustum shape(0, 0, 0, r, R, h);
+    double volume = shape.Volume();
+    volume = round(volume * 100000) / 100000;
+
+    // Assert
+    ASSERT_DOUBLE_EQ(true_volume, volume);
+}
+
