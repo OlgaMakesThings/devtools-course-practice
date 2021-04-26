@@ -89,9 +89,9 @@ class Torus :public Shapes {
 };
 
 class Frustum :public Shapes {
-protected:
+ protected:
     double _top_r, _r, _h;
-public:
+ public:
     Frustum() : _top_r(1), _r(1), _h(1) {}
     Frustum(int x, int y, int z, double r, double R, double h) :
         Shapes(x, y, z), _top_r(r), _r(R), _h(h) {}
