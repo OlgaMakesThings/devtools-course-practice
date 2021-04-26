@@ -3,6 +3,54 @@
 #include <gtest/gtest.h>
 #include "include/3d_shapes_volume.h"
 
+TEST(PANOVA_SHAPES_VOLUME, Cube_Wrong_Data) {
+    Cube bad(0, 0, 0, -2);
+
+    ASSERT_ANY_THROW(bad.Volume());
+}
+
+TEST(PANOVA_SHAPES_VOLUME, Sphere_Wrong_Data) {
+    Sphere bad(0, 0, 0, 0);
+
+    ASSERT_ANY_THROW(bad.Volume());
+}
+
+TEST(PANOVA_SHAPES_VOLUME, Cone_Wrong_Data) {
+    Cone bad(0, 0, 0, -1, -3.23);
+
+    ASSERT_ANY_THROW(bad.BaseArea());
+}
+
+TEST(PANOVA_SHAPES_VOLUME, Parall_ed_Wrong_Data) {
+    Parallelepiped bad(0, 0, 0, 1, -1, 1);
+
+    ASSERT_ANY_THROW(bad.Volume());
+}
+
+TEST(PANOVA_SHAPES_VOLUME, Prism_Wrong_Data) {
+    Prism bad(0, 0, 0, 2, -2, 0);
+
+    ASSERT_ANY_THROW(bad.BaseArea());
+}
+
+TEST(PANOVA_SHAPES_VOLUME, Pyramid_Wrong_Data) {
+    Pyramid bad(0, 0, 0, -1, -2, -3);
+
+    ASSERT_ANY_THROW(bad.BaseArea());
+}
+
+TEST(PANOVA_SHAPES_VOLUME, Torus_Wrong_Data) {
+    Torus bad(0, 0, 0, 3, -2);
+
+    ASSERT_ANY_THROW(bad.Volume());
+}
+
+TEST(PANOVA_SHAPES_VOLUME, Frustum_Wrong_Data) {
+    Frustum bad(0, 0, 0, 1, 3, 0);
+
+    ASSERT_ANY_THROW(bad.Volume());
+}
+
 TEST(PANOVA_SHAPES_VOLUME, Calculate_Cube_Volume) {
     // Arrange
     double side = 1.1;

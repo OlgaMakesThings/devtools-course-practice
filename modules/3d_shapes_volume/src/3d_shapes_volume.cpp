@@ -3,15 +3,27 @@
 #include "include/3d_shapes_volume.h"
 
 double Cube::Volume() const {
-    return pow(_side, 3);
+    if (_side > 0) {
+        return pow(_side, 3);
+    } else {
+        throw "Wrong number";
+    }
 }
 
 double Sphere::Volume() const {
-    return pi * pow(_radius, 3) * 4 / 3;
+    if (_radius > 0) {
+        return pi * pow(_radius, 3) * 4 / 3;
+    } else {
+        throw "Wrong number";
+    }
 }
 
 double Cone::BaseArea() const {
-    return pi * pow(_radius, 2);
+    if (_radius > 0 && _h > 0) {
+        return pi * pow(_radius, 2);
+    } else {
+        throw "Wrong number";
+    }
 }
 
 double Cone::Volume() const {
@@ -19,11 +31,19 @@ double Cone::Volume() const {
 }
 
 double Parallelepiped::Volume() const {
-    return _a * _b * _h;
+    if (_a > 0 && _b > 0 && _h > 0) {
+        return _a * _b * _h;
+    } else {
+        throw "Wrong numbers";
+    }
 }
 
 double Prism::BaseArea() const {
-    return _corners_count * pow(_side, 2) / (4 * tan(180 / _corners_count));
+    if (_corners_count > 0 && _side > 0 && _h > 0) {
+        return _corners_count * pow(_side, 2) / (4 * tan(180 / _corners_count));
+    } else {
+        throw "Wrong numbers";
+    }
 }
 
 double Prism::Volume() const {
@@ -31,7 +51,11 @@ double Prism::Volume() const {
 }
 
 double Pyramid::BaseArea() const {
-    return _corners_count * pow(_side, 2) / (4 * tan(180 / _corners_count));
+    if (_corners_count > 0 && _side > 0 && _h > 0) {
+        return _corners_count * pow(_side, 2) / (4 * tan(180 / _corners_count));
+    } else {
+        throw "Wrong numbers";
+    }
 }
 
 double Pyramid::Volume() const {
@@ -39,9 +63,17 @@ double Pyramid::Volume() const {
 }
 
 double Torus::Volume() const {
-    return 2 * pow(pi, 2) * center_to_axis * pow(_radius, 2);
+    if (center_to_axis > 0 && _radius > 0) {
+        return 2 * pow(pi, 2) * center_to_axis * pow(_radius, 2);
+    } else {
+        throw "Wrong numbers";
+    }
 }
 
 double Frustum::Volume() const {
-    return pi * _h * (pow(_top_r, 2) + _top_r * _r + pow(_r, 2)) / 3;
+    if (_h > 0 && _r > 0 && _top_r > 0) {
+        return pi * _h * (pow(_top_r, 2) + _top_r * _r + pow(_r, 2)) / 3;
+    } else {
+        throw "Wrong numbers";
+    }
 }
