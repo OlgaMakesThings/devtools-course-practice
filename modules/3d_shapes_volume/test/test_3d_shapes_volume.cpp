@@ -152,8 +152,8 @@ TEST(PANOVA_SHAPES_VOLUME, Calculate_Torus_Volume) {
 
 TEST(PANOVA_SHAPES_VOLUME, Calculate_Frustum_Volume) {
     // Arrange
-    double R = 12.01, r = 6.824, h = 7.401;
-    double true_volume = 2114.00000;
+    double R = 1.01, r = 6.4, h = 7.3;
+    double true_volume = 370.33296;
 
     // Act
     Frustum shape(0, 0, 0, r, R, h);
