@@ -12,7 +12,7 @@ class Shapes {
  public:
     Shapes() :_x(0), _y(0), _z(0) {}
     Shapes(int x, int y, int z) :_x(x), _y(y), _z(z) {}
-    virtual double Volume()const = 0;
+    virtual double Volume() const = 0;
 };
 
 class Cube :public Shapes {
@@ -20,7 +20,7 @@ class Cube :public Shapes {
     double _side;
  public:
     Cube() : _side(1) {}
-    Cube(int x, int y, int z, double h) :Shapes(x, y, z), _side(h) {}
+    Cube(int x, int y, int z, double h) : Shapes(x, y, z), _side(h) {}
     double Volume() const override;
 };
 
@@ -29,7 +29,7 @@ class Sphere :public Shapes {
     double _radius;
  public:
     Sphere() : _radius(1) {}
-    Sphere(int x, int y, int z, double r) :Shapes(x, y, z), _radius(r) {}
+    Sphere(int x, int y, int z, double r) : Shapes(x, y, z), _radius(r) {}
     double Volume() const override;
 };
 
