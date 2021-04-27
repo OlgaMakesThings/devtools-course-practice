@@ -12,7 +12,7 @@ double Cube::Volume() const {
 
 double Sphere::Volume() const {
     if (_radius > 0) {
-        return pi * pow(_radius, 3) * 4 / 3;
+        return PI * pow(_radius, 3) * 4 / 3;
     } else {
         throw "Wrong number";
     }
@@ -20,7 +20,7 @@ double Sphere::Volume() const {
 
 double Cone::BaseArea() const {
     if (_radius > 0 && _h > 0) {
-        return pi * pow(_radius, 2);
+        return PI * pow(_radius, 2);
     } else {
         throw "Wrong number";
     }
@@ -64,7 +64,7 @@ double Pyramid::Volume() const {
 
 double Torus::Volume() const {
     if (center_to_axis > 0 && _radius > 0) {
-        return 2 * pow(pi, 2) * center_to_axis * pow(_radius, 2);
+        return 2 * pow(PI, 2) * center_to_axis * pow(_radius, 2);
     } else {
         throw "Wrong numbers";
     }
@@ -72,7 +72,7 @@ double Torus::Volume() const {
 
 double Frustum::Volume() const {
     if (_h > 0 && _r > 0 && _top_r > 0) {
-        return pi * _h * (pow(_top_r, 2) + _top_r * _r + pow(_r, 2)) / 3;
+        return PI * _h * (pow(_top_r, 2) + _top_r * _r + pow(_r, 2)) / 3;
     } else {
         throw "Wrong numbers";
     }
