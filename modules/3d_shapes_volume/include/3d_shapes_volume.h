@@ -8,7 +8,7 @@
 class Shapes {
  protected:
     int _x, _y, _z;
-    double pi = 3.1415926535;
+    const double PI = acos(-1.0);
  public:
     Shapes() :_x(0), _y(0), _z(0) {}
     Shapes(int x, int y, int z) :_x(x), _y(y), _z(z) {}
@@ -60,7 +60,7 @@ class Prism :public Shapes {
     int _corners_count;
  public:
     Prism() : _side(1), _h(1), _corners_count(1) {}
-    Prism(int x, int y, int z, double side, double h, double n) :
+    Prism(int x, int y, int z, double side, double h, int n) :
         Shapes(x, y, z), _side(side), _h(h), _corners_count(n) {}
     double BaseArea() const;
     double Volume() const override;
@@ -72,7 +72,7 @@ class Pyramid :public Shapes {
     int _corners_count;
  public:
     Pyramid() : _side(1), _h(1), _corners_count(1) {}
-    Pyramid(int x, int y, int z, double side, double h, double n) :
+    Pyramid(int x, int y, int z, double side, double h, int n) :
         Shapes(x, y, z), _side(side), _h(h), _corners_count(n) {}
     double BaseArea() const;
     double Volume() const override;
